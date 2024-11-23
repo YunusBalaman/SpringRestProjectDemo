@@ -26,6 +26,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public Boolean existsByMusterino(Long musterino) {
+        return userRepository.existsByMusterino(musterino);
+    }
+
+    @Override
     public Boolean existsByFaketckimlikno(Long faketckimlikno) {
         return userRepository.existsByFaketckimlikno(faketckimlikno);
     }
@@ -48,6 +53,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<User> findAll(){
        return userRepository.findAll();
+    }
+
+    @Override
+    public void deleteByMusterino(Long musterino) {
+        userRepository.deleteByMusterino(musterino);
     }
 
 }

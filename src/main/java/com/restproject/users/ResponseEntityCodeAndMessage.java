@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class BadRequest {
+public class ResponseEntityCodeAndMessage {
 
     private String responseCode;
     private String responseMessage;
