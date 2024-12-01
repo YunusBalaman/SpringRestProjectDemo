@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+       <!-- <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS XXX} %-5p %c:%L %M - %m%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{100} - %msg%n</pattern>
+        </encoder> -->
+       <!-- <withJansi>true</withJansi> -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%yellow(%d{yyyy-MM-dd HH:mm:ss.SSS XXX}) %highlight([%thread]) %highlight(%-5p) %green(%c):%L %red(%M) - %magenta(%m%n)</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="org.reflections.Reflections" level="error" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="io.grpc.netty.shaded.io" level="error" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="ch.qos.logback.classic" level="error" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+</configuration>
